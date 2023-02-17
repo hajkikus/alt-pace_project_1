@@ -17,7 +17,6 @@ def first_choice():
   q = input("Input a silly word: ")
   print(f"""  It was about {a} {b} ago when I arrived at the hospital in a {c}. The hospital is a/an {d} place, there are a lot of {e} {f} here. There are nurses here who have {g} {h}. If someone wants to come into my room I told them that they have to {i} first. I’ve decorated my room with {j} {k}. Today I talked to a doctor and they were wearing a {l} on their {m}. I heard that all doctors {i} {o} every day for breakfast. The most {p} thing about being in the hospital is the {q} {f}!""")
 
-
 def second_choice():
   a = input("Input proper noun (person’s name): ")
   b = input("Input noun: ")
