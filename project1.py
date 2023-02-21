@@ -1,3 +1,5 @@
+import random
+
 def first_choice():
   a = input("Input a number: ")
   b = input("Input measure of time: ")
@@ -17,7 +19,6 @@ def first_choice():
   q = input("Input a silly word: ")
   print(f"""  It was about {a} {b} ago when I arrived at the hospital in a {c}. The hospital is a/an {d} place, there are a lot of {e} {f} here. There are nurses here who have {g} {h}. If someone wants to come into my room I told them that they have to {i} first. I’ve decorated my room with {j} {k}. Today I talked to a doctor and they were wearing a {l} on their {m}. I heard that all doctors {i} {o} every day for breakfast. The most {p} thing about being in the hospital is the {q} {f}!""")
 
-
 def second_choice():
   a = input("Input proper noun (person’s name): ")
   b = input("Input noun: ")
@@ -34,7 +35,6 @@ def second_choice():
   p = input("Input a silly word: ")
   q = input("Input a noun again: ")
   print(f"""  This weekend I am going camping with {a}. I packed my lantern, sleeping bag, and {b}. I am so {c} to {d} in a tent. I am {e} we might see a(n) {f}, I hear they’re kind of dangerous. While we’re camping, we are going to hike, fish, and {g}. I have heard that the {h} lake is great for {i}. Then we will {j} hike throughthe forest for {k} {l}. If I see a {h} {f} while hiking, I am going to bring it home as a pet! At night we will tell {k} {p} stories and roast {q} around the campfire!!""")
-
 def third_choice():
   a = input("Input proper noun (person’s name): ")
   b = input("Input adjective: ")
@@ -58,19 +58,22 @@ def third_choice():
   t = input("Input noun 5: ")
   print(f"""  Dear {a}, I am writing to you from a {b} castle in an enchanted forest. I found myself here one day after going for a ride on a {c} {d} in {e}. There are {f} {g} and {h} {i} here! In the {j} there is a pool full of {k}. I fall asleep each night on a {l} of {m} and dream of {n}  {o}. It feels as though I have lived here for {p} {q}. I hope one day you can visit, although the only way to get here now is {r} on a {s} {t}!!""")
 
+def random_stories():
+  story = random.choice([1, 2, 3])
+  if story == 1:
+      first_choice()
+  elif story == 2:
+      second_choice()
+  elif story == 3:
+      third_choice()
+
 while True:
   try:
     story = int(input("Input number of story (1, 2 or 3): "))
-    if story == 1:
-      first_choice()
-      break
-    elif story == 2:
-      second_choice()
-      break
-    elif story == 3:
-      third_choice()
-      break
+    if story in [1, 2, 3]:
+      random_stories() 
     else:
       raise Exception
+    break
   except:
     print("Please input correct number (1, 2 or 3)")
